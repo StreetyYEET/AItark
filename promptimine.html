@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hea prompti koostamine · AI Targalt</title>
+<meta name="description" content="Prompti anatoomia, seitse praktilist saladust ning head vs halvad näited. Ehita oma prompt interaktiivse tööriistaga ja hinda seda.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#sisu" class="skip-link">Liigu põhisisu juurde</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">AI</span>
+      <span class="brand-text">Targalt</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Peamenüü">
+      <ul>
+        <li><a href="index.html">Avaleht</a></li>
+        <li><a href="turvalisus.html">Andmekaitse</a></li>
+        <li><a href="promptimine.html" aria-current="page">Promptimine</a></li>
+        <li><a href="viktoriin.html">Viktoriin</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <span class="progress-chip"><span class="dot" data-progress-dot></span> <span data-progress-summary>0 / 3 moodulit läbitud</span></span>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-pressed="false" aria-label="Lülitu tumedale teemale">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+      </button>
+      <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ava menüü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="sisu">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Peatükk 2 / 3</p>
+      <h1>Hea prompti koostamine</h1>
+      <p class="lede">Enamik pettumust AI vastustes ei tule mudeli nõrkusest, vaid poolikust promptist. Siin näed prompti anatoomiat, seitset praktilist võtet, päris head-vs-halvad näited ning saad ise oma prompti kokku ehitada ja hinnata.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Alused</p>
+        <h2>Hea prompti anatoomia</h2>
+        <p>Kõiki osi ei pea alati kasutama. Aga mida keerulisem ülesanne, seda rohkem neist tasub lisada.</p>
+      </div>
+      <div class="anatomy">
+        <div class="anatomy-part">
+          <span class="num">1</span>
+          <div>
+            <h3>Roll / kontekst</h3>
+            <p>Ütle, kes AI justkui on või mis olukorras te olete: "Oled kogenud toimetaja...", "Kirjutan kliendile, kes on juba pahane..."</p>
+          </div>
+        </div>
+        <div class="anatomy-part">
+          <span class="num">2</span>
+          <div>
+            <h3>Ülesanne</h3>
+            <p>Täpne tegevussõna ja soovitud tulemus: "Kirjuta", "Võrdle", "Loo tabel", "Leia vead". Väldi umbmäärast "aita mul selle asjaga".</p>
+          </div>
+        </div>
+        <div class="anatomy-part">
+          <span class="num">3</span>
+          <div>
+            <h3>Taustainfo</h3>
+            <p>Kõik, mida AI ise ei tea: varasem suhtlus, sihtgrupp, piirangud, eesmärk. Ilma kontekstita arvab AI ise ja arvab tihti valesti.</p>
+          </div>
+        </div>
+        <div class="anatomy-part">
+          <span class="num">4</span>
+          <div>
+            <h3>Vorming ja pikkus</h3>
+            <p>Punktid või lõigud? Mitu sõna? Tabel või jutustav tekst? Konkreetne vorming säästab hilisemat ümbertöötamist.</p>
+          </div>
+        </div>
+        <div class="anatomy-part">
+          <span class="num">5</span>
+          <div>
+            <h3>Piirangud ja toon</h3>
+            <p>Mida vältida, milline peab olema hääletoon, kellele see on mõeldud. "Väldi tehnilist žargooni", "Toon: sõbralik, kuid professionaalne."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Praktika</p>
+        <h2>7 prompti saladust</h2>
+      </div>
+      <div class="tips-grid">
+        <div class="card tip-card">
+          <span class="tip-num">1</span>
+          <h3>Anna roll ja kontekst</h3>
+          <p>AI vastab paremini, kui teab, mis positsioonilt ta "räägib".</p>
+          <p class="tip-example">"Oled kogenud turundustoimetaja, kes kirjutab lühidalt ja selgelt."</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">2</span>
+          <h3>Ütle täpselt, mida tahad</h3>
+          <p>Konkreetne tegevussõna + oodatud tulemus vähendab arvamist.</p>
+          <p class="tip-example">"Koosta 5-punktiline nimekiri, mitte üldine arutelu."</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">3</span>
+          <h3>Määra formaat ja pikkus</h3>
+          <p>Ütle ette, mis kujul ja kui pikk vastus peab olema.</p>
+          <p class="tip-example">"Kirjuta 3 lõigus, kokku maksimaalselt 150 sõna."</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">4</span>
+          <h3>Anna näiteid (few-shot)</h3>
+          <p>Näita üks-kaks näidet soovitud stiilist või struktuurist.</p>
+          <p class="tip-example">"Siin on näide varasemast postitusest, mille stiilis kirjuta: ..."</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">5</span>
+          <h3>Sea selged piirid</h3>
+          <p>Ütle, mida vältida. See on sama oluline kui see, mida soovid.</p>
+          <p class="tip-example">"Väldi liialdusi ja hüüumärke, ära kasuta inglise laensõnu."</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">6</span>
+          <h3>Lase AI-l küsida</h3>
+          <p>Kui ülesanne on ebaselge, palu AI-l enne täpsustavaid küsimusi küsida.</p>
+          <p class="tip-example">"Kui midagi on ebaselge, küsi enne vastamist täpsustusi."</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">7</span>
+          <h3>Jaota keerulised ülesanded osadeks</h3>
+          <p>Suure ülesande puhul palu mõelda samm-sammult või lahenda see etappidena.</p>
+          <p class="tip-example">"Kõigepealt loetle põhipunktid, seejärel arenda igaüks lõiguks."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Võrdlus</p>
+        <h2>Halb vs hea prompt: 5 päris näidet</h2>
+        <p>Lülita "Halb prompt" ja "Hea prompt" vahel ning loe, miks vahe on nii suur.</p>
+      </div>
+      <div id="compare-list" class="module-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));"></div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Interaktiivne tööriist</p>
+        <h2>Ehita oma prompt</h2>
+        <p>Täida väljad ja jälgi, kuidas su prompt paremaks muutub. Kui oled valmis, kopeeri see otse oma AI-tööriista.</p>
+      </div>
+      <div class="builder">
+        <form id="builder-form" onsubmit="return false;">
+          <div class="builder-field">
+            <label for="f-role">Roll / kontekst</label>
+            <span class="hint">Kes AI justkui on, või millises olukorras te olete</span>
+            <input type="text" id="f-role" placeholder="Oled kogenud klienditeeninduse spetsialist.">
+          </div>
+          <div class="builder-field">
+            <label for="f-task">Ülesanne</label>
+            <span class="hint">Mida täpselt soovid, et AI teeks</span>
+            <textarea id="f-task" placeholder="Kirjuta e-kiri kliendile, kes küsis tarneaega."></textarea>
+          </div>
+          <div class="builder-field">
+            <label for="f-context">Taustainfo</label>
+            <span class="hint">Kõik, mida AI ise ei tea</span>
+            <textarea id="f-context" placeholder="Tellimus nr 4521 hilineb 3 päeva laoseisu tõttu."></textarea>
+          </div>
+          <div class="builder-field">
+            <label for="f-format">Vorming ja pikkus</label>
+            <span class="hint">Struktuur, pikkus, keel</span>
+            <input type="text" id="f-format" placeholder="Max 120 sõna, 2 lõiku, eesti keeles.">
+          </div>
+          <div class="builder-field">
+            <label for="f-constraints">Piirangud ja toon</label>
+            <span class="hint">Mida vältida, milline peab olema hääletoon</span>
+            <input type="text" id="f-constraints" placeholder="Toon: sõbralik ja professionaalne, väldi vabandavat tooni.">
+          </div>
+        </form>
+        <div>
+          <div class="prompt-preview">
+            <div class="prompt-preview-head">
+              <strong>Sinu prompt</strong>
+              <button type="button" class="btn btn-sm btn-secondary copy-btn" id="builder-copy">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+                Kopeeri
+              </button>
+            </div>
+            <div id="builder-preview"><p class="empty">Hakka täitma välju vasakul. Sinu prompt koostatakse siia automaatselt.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="card">
+        <div class="section-head" style="margin-bottom:16px;">
+          <p class="eyebrow">Lisatööriist</p>
+          <h2>Hinda oma enda prompti</h2>
+          <p>Kleebi prompt, mida päriselt tavaliselt kasutad. Tööriist kontrollib mõnda levinud tunnust. See on lihtne heuristika, mitte AI-hinnang.</p>
+        </div>
+        <label for="rater-input" class="sr-only">Sisesta hinnatav prompt</label>
+        <textarea id="rater-input" placeholder="Kleebi siia oma tavaline prompt..."></textarea>
+        <div class="btn-row mt-24">
+          <button class="btn btn-primary" type="button" id="rater-btn">Hinda prompti</button>
+        </div>
+        <div class="rater-result" id="rater-result"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container center-cta">
+      <h2>Testi, kas kõik jäi meelde</h2>
+      <p>Kaheksa küsimust, mis katavad nii andmekaitset kui promptimist.</p>
+      <div class="btn-row" style="justify-content:center;">
+        <a href="viktoriin.html" class="btn btn-primary">Jätka: viktoriin →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>AI Targalt on tasuta õppematerjal. See on informatiivne ja ei asenda juriidilist nõu. Kõik andmed jäävad kohalikku brauserisse.</p>
+    <nav aria-label="Jaluse lingid">
+      <ul>
+        <li><a href="index.html">Avaleht</a></li>
+        <li><a href="turvalisus.html">Andmekaitse</a></li>
+        <li><a href="viktoriin.html">Viktoriin</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/prompt-tools.js"></script>
+</body>
+</html>

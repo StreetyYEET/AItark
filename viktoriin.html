@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viktoriin · AI Targalt</title>
+<meta name="description" content="Testi oma teadmisi andmekaitsest ja heast promptimisest kaheksa küsimusega.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#sisu" class="skip-link">Liigu põhisisu juurde</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">AI</span>
+      <span class="brand-text">Targalt</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Peamenüü">
+      <ul>
+        <li><a href="index.html">Avaleht</a></li>
+        <li><a href="turvalisus.html">Andmekaitse</a></li>
+        <li><a href="promptimine.html">Promptimine</a></li>
+        <li><a href="viktoriin.html" aria-current="page">Viktoriin</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <span class="progress-chip"><span class="dot" data-progress-dot></span> <span data-progress-summary>0 / 3 moodulit läbitud</span></span>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-pressed="false" aria-label="Lülitu tumedale teemale">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+      </button>
+      <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ava menüü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="sisu">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Peatükk 3 / 3</p>
+      <h1>Testi oma teadmisi</h1>
+      <p class="lede">Kaheksa küsimust andmekaitsest ja heast promptimisest. Iga vastuse järel näed kohe selgitust.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container quiz-wrap">
+      <div class="quiz-progress">
+        <div class="track"><div class="fill" id="quiz-progress-fill"></div></div>
+        <span id="quiz-progress-label">Küsimus 1 / 8</span>
+      </div>
+      <div class="card quiz-card" id="quiz-card"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>AI Targalt on tasuta õppematerjal. See on informatiivne ja ei asenda juriidilist nõu. Kõik andmed jäävad kohalikku brauserisse.</p>
+    <nav aria-label="Jaluse lingid">
+      <ul>
+        <li><a href="index.html">Avaleht</a></li>
+        <li><a href="turvalisus.html">Andmekaitse</a></li>
+        <li><a href="promptimine.html">Promptimine</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

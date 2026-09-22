@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andmekaitse ja turvaline AI kasutamine · AI Targalt</title>
+<meta name="description" content="Õpi, milliseid andmeid tohib tehisintellekti tööriistadega jagada. Interaktiivne liigitusharjutus, tundlike andmete skänner ja kontrollnimekiri.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#sisu" class="skip-link">Liigu põhisisu juurde</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">AI</span>
+      <span class="brand-text">Targalt</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Peamenüü">
+      <ul>
+        <li><a href="index.html">Avaleht</a></li>
+        <li><a href="turvalisus.html" aria-current="page">Andmekaitse</a></li>
+        <li><a href="promptimine.html">Promptimine</a></li>
+        <li><a href="viktoriin.html">Viktoriin</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <span class="progress-chip"><span class="dot" data-progress-dot></span> <span data-progress-summary>0 / 3 moodulit läbitud</span></span>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-pressed="false" aria-label="Lülitu tumedale teemale">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+      </button>
+      <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ava menüü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="sisu">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Peatükk 1 / 3</p>
+      <h1>Andmekaitse &amp; turvaline AI kasutamine</h1>
+      <p class="lede">Enne kui midagi tehisintellektile kirjutad, tasub küsida: kas ma jagaks seda infot ka võõra inimesega telefonis? Sellel lehel harjutad andmete tundlikkuse hindamist, proovid tundliku info tuvastamise tööriista ja saad kaasa kontrollnimekirja.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="legend">
+        <span class="signal signal--safe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Turvaline</span>
+        <span class="signal signal--caution"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg> Ettevaatust</span>
+        <span class="signal signal--danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg> Ära jaga</span>
+      </div>
+      <p class="lede" style="margin-top:14px;">Turvaline tähendab, et sisu ei sisalda isiklikku ega ärisaladust. Ettevaatust tähendab, et tegu on isikuandmetega ja vaja on heaks kiidetud tööriista. Ära jaga tähendab, et info on tundlik, eriliigiline või salastatud.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Harjutus 1</p>
+        <h2>Liigita 9 päris elu stsenaariumi</h2>
+        <p>Loe iga olukorda ja vali, kuhu kategooriasse see kuulub. Saad kohe põhjendatud tagasisidet.</p>
+      </div>
+
+      <div id="classifier-board" class="classifier-board"></div>
+
+      <div class="score-bar">
+        <div class="track"><div class="fill" id="classifier-fill"></div></div>
+        <strong id="classifier-score-text">0 õiget / 0 vastatud (9 kokku)</strong>
+      </div>
+
+      <div class="callout callout--success mt-24" id="classifier-done-banner" hidden>
+        <span class="callout-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </span>
+        <p><strong>Peatükk on märgitud lõpetatuks</strong>Jätka kontrollnimekirja ja skänneri juurde. Soovi korral liigu kohe edasi promptimise juurde.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="card">
+        <div class="section-head" style="margin-bottom:20px;">
+          <p class="eyebrow">Harjutus 2</p>
+          <h2>Tundlike andmete kiirkontroll</h2>
+          <p>Kleebi tekst, mida kavatsed AI-le saata. Tööriist otsib levinumaid mustreid: isikukood, e-post, IBAN, pangakaardi number, telefon ja märksõnad nagu "parool" või "api key". See on lihtsustatud heuristika, mitte lõplik õiguslik hinnang.</p>
+        </div>
+        <div class="scanner">
+          <label for="scan-input" class="sr-only">Sisesta kontrollitav tekst</label>
+          <textarea id="scan-input" placeholder="Kleebi siia näidistekst...">Tere! Minu nimi on Mari Maasikas, isikukood 48901010001, minu e-mail on mari.maasikas@näide.ee ja telefon 5555 1234. Palun aita mul kirjutada avaldus.</textarea>
+          <div class="btn-row">
+            <button class="btn btn-primary" type="button" id="scan-btn">Kontrolli teksti</button>
+            <button class="btn btn-secondary" type="button" id="scan-clear">Tühjenda</button>
+          </div>
+          <div class="scan-results" id="scan-results" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Harjutus 3</p>
+        <h2>Viimane kontroll enne saatmist</h2>
+        <p>Märgi läbi enne, kui kleebid midagi tundlikumat AI vestlusesse. Sinu valikud jäävad meelde ka järgmisel külastusel.</p>
+      </div>
+      <ul class="checklist" id="pre-send-checklist">
+        <li><input type="checkbox" id="c1"><label for="c1">Olen kontrollinud, et tekst ei sisalda isikukoodi, sünniaega ega muid otsetuvastajaid.</label></li>
+        <li><input type="checkbox" id="c2"><label for="c2">Olen eemaldanud või asendanud paroolid, API-võtmed ja ligipääsuandmed.</label></li>
+        <li><input type="checkbox" id="c3"><label for="c3">Kasutan oma organisatsiooni poolt heaks kiidetud AI-tööriista.</label></li>
+        <li><input type="checkbox" id="c4"><label for="c4">Olen kontrollinud tööriista andmekasutuse seadeid (kas sisend läheb mudeli treenimiseks?).</label></li>
+        <li><input type="checkbox" id="c5"><label for="c5">Jagatav info ei ole avaldamata äri- ega finantssaladus.</label></li>
+        <li><input type="checkbox" id="c6"><label for="c6">Tundlikud andmed olen vajadusel anonümiseerinud või pseudonümiseerinud.</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Kokkuvõte</p>
+        <h2>Viis kiiret põhimõtet meelde jätmiseks</h2>
+      </div>
+      <div class="tips-grid">
+        <div class="card tip-card">
+          <span class="tip-num">1</span>
+          <h3>Minimeeri</h3>
+          <p>Jaga ainult seda infot, mida ülesande täitmiseks päriselt vaja on. Ära jaga kogu konteksti "igaks juhuks".</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">2</span>
+          <h3>Anonümiseeri</h3>
+          <p>Asenda nimed, kontaktid ja tunnused üldsõnaliste kohatäitjatega, kui täpne isik pole vajalik.</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">3</span>
+          <h3>Kontrolli tööriista</h3>
+          <p>Ettevõtte tasemel lepingud (DPA) ja "ei kasuta minu andmeid treeninguks" seaded on olulised erinevused tasuta versioonidest.</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">4</span>
+          <h3>Eelda avalikkust</h3>
+          <p>Kirjuta nii, nagu see tekst võiks kunagi kellelegi teisele näha jääda. See on hea turvaharjumus.</p>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-num">5</span>
+          <h3>Eriliigilised andmed eraldi</h3>
+          <p>Tervis, poliitilised vaated, usk ja ametiühingu kuuluvus on erilised. Need vajavad alati spetsiaalset, nõuetele vastavat lahendust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container center-cta">
+      <h2>Valmis edasi minema?</h2>
+      <p>Järgmisena vaatame, kuidas koostada prompte, mis annavad päriselt häid tulemusi.</p>
+      <div class="btn-row" style="justify-content:center;">
+        <a href="promptimine.html" class="btn btn-primary">Jätka: hea prompti koostamine →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>AI Targalt on tasuta õppematerjal. See on informatiivne ja ei asenda juriidilist nõu. Kõik andmed jäävad kohalikku brauserisse.</p>
+    <nav aria-label="Jaluse lingid">
+      <ul>
+        <li><a href="index.html">Avaleht</a></li>
+        <li><a href="promptimine.html">Promptimine</a></li>
+        <li><a href="viktoriin.html">Viktoriin</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/data-classifier.js"></script>
+<script>
+(function () {
+  var CHECK_KEY = "ai-targalt-checklist";
+  var list = document.getElementById("pre-send-checklist");
+  if (!list) return;
+  var boxes = Array.prototype.slice.call(list.querySelectorAll('input[type="checkbox"]'));
+
+  function save() {
+    var state = boxes.map(function (b) { return b.checked; });
+    localStorage.setItem(CHECK_KEY, JSON.stringify(state));
+    var anyChecked = state.some(Boolean);
+    var allChecked = state.every(Boolean);
+    if (anyChecked) window.AiTargalt.Progress.set("turvalisus", "in-progress");
+    if (allChecked) window.AiTargalt.Progress.set("turvalisus", "done");
+  }
+  function restore() {
+    try {
+      var state = JSON.parse(localStorage.getItem(CHECK_KEY));
+      if (Array.isArray(state)) {
+        boxes.forEach(function (b, i) { b.checked = !!state[i]; b.closest("li").classList.toggle("checked", b.checked); });
+      }
+    } catch (e) {}
+  }
+  boxes.forEach(function (b) {
+    b.addEventListener("change", function () {
+      b.closest("li").classList.toggle("checked", b.checked);
+      save();
+    });
+  });
+  restore();
+
+  var input = document.getElementById("scan-input");
+  var out = document.getElementById("scan-results");
+  var btn = document.getElementById("scan-btn");
+  var clearBtn = document.getElementById("scan-clear");
+  function render() {
+    var hits = window.AiTargalt.scanText(input.value);
+    out.innerHTML = "";
+    if (!input.value.trim()) return;
+    if (hits.length === 0) {
+      out.innerHTML = '<div class="scan-clean"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Ilmseid tundliku info märke ei leitud.</div>';
+    } else {
+      hits.forEach(function (h) {
+        var div = document.createElement("div");
+        div.className = "scan-hit";
+        div.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg> Leitud: ' + h.type + ' (' + h.count + ')';
+        out.appendChild(div);
+      });
+    }
+    window.AiTargalt.Progress.set("turvalisus", "in-progress");
+  }
+  if (btn) btn.addEventListener("click", render);
+  if (clearBtn) clearBtn.addEventListener("click", function () { input.value = ""; out.innerHTML = ""; });
+})();
+</script>
+</body>
+</html>
